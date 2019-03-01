@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  vars_files:
+    - "vars/params.yml"
+
+  tasks:
+
+  - name: git checkout
+    git:
+      repo: "{{ gitUrlBase }}{{ item.name }}"
+      dest: "{{ playbook_dir }}/{{ item.name .split('.')[0] }}"
+      version: "{{ item.version }}"
+      force: no
+    ignore_errors: yes
+    loop: "{{ repo }}"

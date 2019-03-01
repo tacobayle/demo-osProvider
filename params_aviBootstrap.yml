@@ -1,0 +1,23 @@
+---
+controller:
+  clusterIpStatus: false
+  clusterIp: 172.16.1.11
+  cloud: openStack
+
+cloudconnectoruser:
+  name: user-azure
+
+systemconfiguration:
+  global_tenant_config:
+    se_in_provider_context: true
+    tenant_access_to_provider_se: true
+    tenant_vrf: false
+
+serviceenginegroup:
+  - name: Default-Group
+    ha_mode: HA_MODE_SHARED # N+M
+    #ha_mode: HA_MODE_SHARED_PAIR # Active-Active
+    min_scaleout_per_vs: 1 # required for acitive active
+
+credsJsonFile:
+  - ../aviOs/vars/creds.json
