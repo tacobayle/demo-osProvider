@@ -3,10 +3,10 @@ gitUrlBase: https://github.com/tacobayle/
 
 repo:
   - name: devstack.git
-    version: v1.04
+    version: v1.06
   - name: aviKvm.git
     version: v1.01
   - name: aviBootstrap.git
     version: v1.08
   - name: aviOs.git
-    version: v1.02
+    version: v1.03
