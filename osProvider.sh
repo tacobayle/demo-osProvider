@@ -8,6 +8,7 @@ echo "#####################################"
 echo "Apply the configuration"
 cd devstack
 ansible-playbook -i hostsLocalKvm main.yml
+read -n 1 -s -r -p "Press any key to continue the Avi Config"
 cd ../aviKvm
 ansible-playbook -i hostsLocalKvm generateHosts.yml
 ansible-playbook -i hostsLocalKvm generateCreds.yml
